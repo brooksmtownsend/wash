@@ -27,6 +27,19 @@ cargo install wash-cli
 ## Using wash
 
 ### Signing a wasmCloud actor (`claims sign`, `claims inspect`)
+```
+# We'll be using `echo` from https://github.com/wasmCloud/examples for this example actor
+
+# Navigate to the root of your actor project (where Cargo.toml resides)
+cd examples/echo
+
+# Build your actor
+cargo build --release
+
+# Sign your actor
+# Here we're signing the Echo actor with the http_server capability, as that actor handles HTTP requests.
+wash claims sign target/wasm32-unknown-unknown/debug/echo.wasm --http_server --name Echo
+```
 1. Navigate to your project directory, we'll be using `echo` from https://github.com/wasmCloud/examples
 1. Run `cargo build` to build your `wasm` under `target/wasm32-unknown-unknown/debug/echo.wasm`
 1. A signed wasmCloud actor is bundled with claims, which includes verifiable information about the source, signer, and capabilities that an actor is allowed to leverage. Required information to minimally sign an actor are:
