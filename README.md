@@ -9,6 +9,11 @@
 ```
 wasmCloud Shell - A single CLI to handle all of your wasmCloud tooling needs
 
+## Requirements
+- `cargo`
+- For `linux` users, `llvm-lib` is required and can be installed with `apt` or `pacman`
+- `nats-server` OR `docker-compose` / `docker` for the `wash` REPL
+
 ## Installing wash
 ```
 cargo install wash-cli
